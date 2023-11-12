@@ -1,10 +1,18 @@
 export enum Cosmo_LogLevel {
-	Verbose = 0,
-	Debug = 1,
-	Info = 2,
-	Warning = 3,
-	Error = 4
+	Verbose = "Verbose",
+	Debug = "Debug",
+	Info = "Info",
+	Warning = "Warning",
+	Error = "Error"
 }
+
+export const cosmo_LogLevelOrder = [
+	Cosmo_LogLevel.Verbose,
+	Cosmo_LogLevel.Debug,
+	Cosmo_LogLevel.Info,
+	Cosmo_LogLevel.Warning,
+	Cosmo_LogLevel.Error,
+]
 
 export type Cosmo_LogParam = string | number | boolean | undefined | null | object | any[] | Error;
 

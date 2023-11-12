@@ -1,4 +1,4 @@
-import {Cosmo_LogLevel, Cosmo_LogParam} from './types';
+import {Cosmo_LogLevel, cosmo_LogLevelOrder, Cosmo_LogParam} from './types';
 import {Cosmo_ClientLogger} from '../Cosmo_ClientLogger/Cosmo_ClientLogger';
 
 export class Cosmo_Logger {
@@ -23,7 +23,7 @@ export class Cosmo_Logger {
 	};
 
 	log = (logLevel: Cosmo_LogLevel, bold: boolean, toLog: Cosmo_LogParam[]) => {
-		if (this.logLevel < logLevel)
+		if (cosmo_LogLevelOrder.indexOf(logLevel) < cosmo_LogLevelOrder.indexOf(this.logLevel))
 			return;
 
 		Cosmo_ClientLogger.log(logLevel, bold, this.tag, toLog);
