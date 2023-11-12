@@ -23,7 +23,7 @@ export abstract class Cosmo_LogClient_Base {
 
 	private defaultLogPrefixComposer(logLevel: Cosmo_LogLevel, tag: string): string {
 		const now = new Date();
-		return `%c${this.getLogLevelPrefix(logLevel)} %c${this.getLocalizedTimeString(now)} %c${tag}:`;
+		return `%c${this.getLogLevelPrefix(logLevel)}%c${this.getLocalizedTimeString(now)}%c${tag}:`;
 	};
 
 	private getLogLevelPrefix = (logLevel: Cosmo_LogLevel): string => {

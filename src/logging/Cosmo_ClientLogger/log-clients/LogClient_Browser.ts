@@ -32,7 +32,7 @@ class LogClient_Browser_Class
 	};
 
 	private logGroup = (logLevel: Cosmo_LogLevel, bold: boolean, prefix: string, ...toLog: Cosmo_LogParam[]) => {
-		this.logSingle(logLevel,bold,prefix);
+		this.logSingle(logLevel, bold, prefix);
 		console.group();
 		toLog.forEach(logParam => console.log(logParam));
 		console.groupEnd();
@@ -67,7 +67,8 @@ class LogClient_Browser_Class
 		return this.composeStyleString({
 			color: '#ffffff',
 			'background-color': this.getLogLevelColor(logLevel),
-			'font-weight': bold ? 'bold' : 'normal'
+			'font-weight': bold ? 'bold' : 'normal',
+			padding: '2px 5px',
 		});
 	};
 
@@ -75,7 +76,8 @@ class LogClient_Browser_Class
 		return this.composeStyleString({
 			color: '#ffffff',
 			'background-color': '#3066be',
-			'font-weight': bold ? 'bold' : 'normal'
+			'font-weight': bold ? 'bold' : 'normal',
+			padding: '2px 5px',
 		});
 	};
 
@@ -83,6 +85,7 @@ class LogClient_Browser_Class
 		return this.composeStyleString({
 			color: this.getLogLevelColor(logLevel),
 			'font-weight': bold ? 'bold' : 'normal',
+			padding: '2px 5px',
 		});
 	};
 }

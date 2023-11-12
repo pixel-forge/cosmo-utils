@@ -6,4 +6,5 @@ export type Cosmo_LoggerStyleObject = {
 	color?: string;
 	'background-color'?:string;
 	'font-weight'?: 'bold' | 'normal';
+	padding?: string;
 }
