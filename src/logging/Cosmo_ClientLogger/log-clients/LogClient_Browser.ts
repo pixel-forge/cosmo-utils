@@ -32,12 +32,8 @@ class LogClient_Browser_Class
 	};
 
 	private logGroup = (logLevel: Cosmo_LogLevel, bold: boolean, prefix: string, ...toLog: Cosmo_LogParam[]) => {
-		console.group(
-			toLog,
-			this.getLogLevelStyling(logLevel, bold),
-			this.getTimestampStyling(bold),
-			this.getTagStyling(logLevel, bold)
-		);
+		this.logSingle(logLevel,bold,prefix);
+		console.group();
 		toLog.forEach(logParam => console.log(logParam));
 		console.groupEnd();
 	};
