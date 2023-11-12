@@ -44,6 +44,6 @@ export abstract class Cosmo_LogClient_Base {
 	};
 
 	private getLocalizedTimeString = (date: Date): string => {
-		return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()} ${date.toLocaleDateString()}`;
+		return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()} ${date.toLocaleTimeString()}`;
 	};
 }
