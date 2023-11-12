@@ -1,4 +1,6 @@
-export const removeItemFromArray = <T>(arr: T[], instance: T) => {
+import { exists } from "./general-tools";
+
+export function removeItemFromArray<T>(arr: T[], instance: T) {
 	const index = arr.indexOf(instance);
 	if (index === -1)
 		return;
@@ -27,4 +29,8 @@ export function sortArray<T>(array: T[], map: keyof T | (keyof T)[] | ((item: T)
 	return keys.reduce((array, key) => {
 		return sortArray<T>(array, item => item[key]);
 	}, array) as T[];
+}
+
+export function filterInstances<T>(arr?: (T | undefined | null | void)[]): T[] {
+	return (arr?.filter(item=> exists(item)) ?? []) as T[];
 }
