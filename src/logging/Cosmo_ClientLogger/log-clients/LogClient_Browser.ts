@@ -8,7 +8,7 @@ class LogClient_Browser_Class
 
 	// ################## Class Methods ##################
 
-	protected logImpl(logLevel: Cosmo_LogLevel, bold: boolean, prefix: string, ...toLog: Cosmo_LogParam[]) {
+	protected logImpl(logLevel: Cosmo_LogLevel, bold: boolean, prefix: string, toLog: Cosmo_LogParam[]) {
 		//If the first log param is a primitive combine it with the prefix
 		if (cosmo_PrimitiveLogParams.includes(typeof toLog[0])) {
 			prefix += ` ${toLog[0]}`;
@@ -31,9 +31,9 @@ class LogClient_Browser_Class
 		);
 	};
 
-	private logGroup = (logLevel: Cosmo_LogLevel, bold: boolean, prefix: string, ...toLog: Cosmo_LogParam[]) => {
+	private logGroup = (logLevel: Cosmo_LogLevel, bold: boolean, prefix: string, toLog: Cosmo_LogParam[]) => {
 		console.group(
-			toLog,
+			prefix,
 			this.getLogLevelStyling(logLevel, bold),
 			this.getTimestampStyling(bold),
 			this.getTagStyling(logLevel, bold)

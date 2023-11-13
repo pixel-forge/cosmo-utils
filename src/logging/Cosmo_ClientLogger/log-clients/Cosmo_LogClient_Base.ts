@@ -9,9 +9,9 @@ export abstract class Cosmo_LogClient_Base {
 
 	// ################## Class Methods ##################
 
-	protected abstract logImpl(logLevel: Cosmo_LogLevel, bold: boolean, prefix: string, ...toLog: Cosmo_LogParam[]): void;
+	protected abstract logImpl(logLevel: Cosmo_LogLevel, bold: boolean, prefix: string, toLog: Cosmo_LogParam[]): void;
 
-	public log(logLevel: Cosmo_LogLevel, bold: boolean, tag: string, ...toLog: Cosmo_LogParam[]) {
+	public log(logLevel: Cosmo_LogLevel, bold: boolean, tag: string, toLog: Cosmo_LogParam[]) {
 		this.logImpl(logLevel, bold, this.logPrefixComposer(logLevel, tag), toLog);
 	}
 
