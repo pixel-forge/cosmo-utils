@@ -22,7 +22,11 @@ export class Cosmo_Logger {
 		this.logLevel = logLevel;
 	};
 
-	log (logLevel: Cosmo_LogLevel, bold: boolean, toLog: Cosmo_LogParam[]) {
+	protected setTag = (tag: string) => {
+		this.tag = tag;
+	};
+
+	log(logLevel: Cosmo_LogLevel, bold: boolean, toLog: Cosmo_LogParam[]) {
 		if (cosmo_LogLevelOrder.indexOf(logLevel) < cosmo_LogLevelOrder.indexOf(this.logLevel))
 			return;
 
