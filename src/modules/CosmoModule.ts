@@ -10,9 +10,9 @@ export class CosmoModule<C extends {} = {}, Config extends _Config<C> = _Config<
 	constructor() {
 		super();
 		const name = this.constructor.name;
-		if(!name.endsWith('_Class'))
+		if (!name.endsWith('_Class'))
 			throw new Error(`Invalid module class name ${name}, must end with "_Class"`);
-		this.setTag(name.replace('_Class',''));
+		this.setTag(name.replace('_Class', ''));
 	}
 
 	// ################## Class Methods - Logging ##################
