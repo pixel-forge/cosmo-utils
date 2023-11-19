@@ -17,43 +17,43 @@ export class CosmoModule<C extends {} = {}, Config extends _Config<C> = _Config<
 
 	// ################## Class Methods - Logging ##################
 
-	logVerbose = (...toLog: Cosmo_LogParam[]) => {
+	protected logVerbose = (...toLog: Cosmo_LogParam[]) => {
 		this.log(Cosmo_LogLevel.Verbose, false, toLog);
 	};
 
-	logVerboseBold = (...toLog: Cosmo_LogParam[]) => {
+	protected logVerboseBold = (...toLog: Cosmo_LogParam[]) => {
 		this.log(Cosmo_LogLevel.Verbose, true, toLog);
 	};
 
-	logDebug = (...toLog: Cosmo_LogParam[]) => {
+	protected logDebug = (...toLog: Cosmo_LogParam[]) => {
 		this.log(Cosmo_LogLevel.Debug, false, toLog);
 	};
 
-	logDebugBold = (...toLog: Cosmo_LogParam[]) => {
+	protected logDebugBold = (...toLog: Cosmo_LogParam[]) => {
 		this.log(Cosmo_LogLevel.Debug, true, toLog);
 	};
 
-	logInfo = (...toLog: Cosmo_LogParam[]) => {
+	protected logInfo = (...toLog: Cosmo_LogParam[]) => {
 		this.log(Cosmo_LogLevel.Info, false, toLog);
 	};
 
-	logInfoBold = (...toLog: Cosmo_LogParam[]) => {
+	protected logInfoBold = (...toLog: Cosmo_LogParam[]) => {
 		this.log(Cosmo_LogLevel.Info, true, toLog);
 	};
 
-	logWarning = (...toLog: Cosmo_LogParam[]) => {
+	protected logWarning = (...toLog: Cosmo_LogParam[]) => {
 		this.log(Cosmo_LogLevel.Warning, false, toLog);
 	};
 
-	logWarningBold = (...toLog: Cosmo_LogParam[]) => {
+	protected logWarningBold = (...toLog: Cosmo_LogParam[]) => {
 		this.log(Cosmo_LogLevel.Warning, true, toLog);
 	};
 
-	logError = (...toLog: Cosmo_LogParam[]) => {
+	protected logError = (...toLog: Cosmo_LogParam[]) => {
 		this.log(Cosmo_LogLevel.Error, false, toLog);
 	};
 
-	logErrorBold = (...toLog: Cosmo_LogParam[]) => {
+	protected logErrorBold = (...toLog: Cosmo_LogParam[]) => {
 		this.log(Cosmo_LogLevel.Error, true, toLog);
 	};
 }

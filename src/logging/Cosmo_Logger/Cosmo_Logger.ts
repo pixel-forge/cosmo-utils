@@ -18,7 +18,7 @@ export class Cosmo_Logger {
 
 	// ################## Class Methods ##################
 
-	setMinLevel = (logLevel: Cosmo_LogLevel) => {
+	protected setMinLevel = (logLevel: Cosmo_LogLevel) => {
 		this.logLevel = logLevel;
 	};
 
@@ -26,7 +26,7 @@ export class Cosmo_Logger {
 		this.tag = tag;
 	};
 
-	log(logLevel: Cosmo_LogLevel, bold: boolean, toLog: Cosmo_LogParam[]) {
+	protected log(logLevel: Cosmo_LogLevel, bold: boolean, toLog: Cosmo_LogParam[]) {
 		if (cosmo_LogLevelOrder.indexOf(logLevel) < cosmo_LogLevelOrder.indexOf(this.logLevel))
 			return;
 
