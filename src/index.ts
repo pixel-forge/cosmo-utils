@@ -4,6 +4,7 @@ export * from './logging/Cosmo_ClientLogger';
 
 //Modules
 export * from './modules/CosmoModule';
+export * from './modules/CosmoModule_WebStorage';
 
 //Utils
 export * from './utils/general-tools'
