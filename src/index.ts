@@ -7,7 +7,8 @@ export * from './modules/CosmoModule';
 export * from './modules/CosmoModule_WebStorage';
 
 //Utils
+export * from './utils/array-tools';
+export * from './utils/date-time-tools';
 export * from './utils/general-tools'
 export * from './utils/object-tools';
-export * from './utils/array-tools';
 export * from './utils/string-tools';
