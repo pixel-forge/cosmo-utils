@@ -13,8 +13,11 @@ class CosmoModule_WebStorage_Class
 		super();
 	}
 
-	public registerWebStorageKey(key: string, withstandDeletion: boolean = false) {
+	public registerWebStorageKey(key: string, withstandDeletion: boolean, persist: boolean) {
 		this.withstandDeletionMap[key] = withstandDeletion;
+		const env = this.getEnv(persist);
+		const value = env.getItem(key);
+		return value ? JSON.parse(value) : undefined;
 	};
 
 	// ################## Class Logic ##################
@@ -64,13 +67,13 @@ export class Cosmo_WebStorage<V extends any> {
 	constructor(key: string, withstandDeletion: boolean = false, persist: boolean = true) {
 		this.key = key;
 		this.persist = persist;
-		CosmoModule_WebStorage.registerWebStorageKey(key, withstandDeletion);
+		this.value = CosmoModule_WebStorage.registerWebStorageKey(key, withstandDeletion, persist) as V | undefined;
 	}
 
 	// ################## Class Logic ##################
 
 	get(defaultValue?: V): V {
-		return this.value ?? CosmoModule_WebStorage.get(this.key, this.persist) ?? defaultValue;
+		return (this.value ?? defaultValue) as V;
 	}
 
 	set(value: V) {
