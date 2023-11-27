@@ -17,9 +17,9 @@ export abstract class Cosmo_ModuleManager
 		return this;
 	};
 
-	public init = () => {
+	public init() {
 		this.setMinLevel(this.config?.logLevel ?? Cosmo_LogLevel.Info);
-		this.logInfo('Initializing App');
+		this.logDebug('Initializing App');
 
 		//Validate modules
 		const invalidModules = this.getModules(module => !exists(module));
@@ -33,13 +33,13 @@ export abstract class Cosmo_ModuleManager
 		}
 
 		//Set module configs
-		this.logInfo('Setting Module Configs');
+		this.logDebug('Setting Module Configs');
 		this.modules.forEach(module => {
 			module.setConfig(this.config[module.getTag()]);
 		});
 
 		//Initialize modules
-		this.logInfo('Initializing Modules');
+		this.logDebug('Initializing Modules');
 		this.modules.forEach(module => {
 			try {
 				//@ts-ignore - this is the one place to call init on modules
@@ -48,6 +48,8 @@ export abstract class Cosmo_ModuleManager
 				this.logErrorBold(`Failed to initiate module ${module.getTag()}`, error);
 			}
 		});
+
+		this.logInfo('App Initialized');
 	};
 
 	// ################## Class Logic - Module Management ##################
