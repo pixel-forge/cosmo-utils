@@ -26,6 +26,8 @@ export class Cosmo_Logger {
 		this.tag = tag;
 	};
 
+	public getTag = () => this.tag;
+
 	log(logLevel: Cosmo_LogLevel, bold: boolean, toLog: Cosmo_LogParam[]) {
 		if (cosmo_LogLevelOrder.indexOf(logLevel) < cosmo_LogLevelOrder.indexOf(this.logLevel))
 			return;

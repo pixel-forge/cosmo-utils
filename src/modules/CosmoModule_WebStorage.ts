@@ -1,9 +1,9 @@
 import {exists} from '../utils/general-tools';
 import {_keys} from '../utils/object-tools';
-import {CosmoModule} from './CosmoModule';
+import {Cosmo_Module} from './base/Cosmo_Module';
 
 class CosmoModule_WebStorage_Class
-	extends CosmoModule {
+	extends Cosmo_Module {
 
 	private readonly withstandDeletionMap: { [k: string]: boolean } = {};
 

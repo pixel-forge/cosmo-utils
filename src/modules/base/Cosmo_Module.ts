@@ -1,8 +1,8 @@
-import {Cosmo_Logger, Cosmo_LogLevel, Cosmo_LogParam} from '../logging/Cosmo_Logger';
+import {Cosmo_Logger, Cosmo_LogLevel, Cosmo_LogParam} from '../../logging/Cosmo_Logger';
 
 type _Config<C> = C & { minLogLevel?: Cosmo_LogLevel }
 
-export class CosmoModule<C extends {} = {}, Config extends _Config<C> = _Config<C>>
+export class Cosmo_Module<C extends {} = {}, Config extends _Config<C> = _Config<C>>
 	extends Cosmo_Logger {
 
 	protected config: Config = {} as Config;
@@ -13,6 +13,15 @@ export class CosmoModule<C extends {} = {}, Config extends _Config<C> = _Config<
 		if (!name.endsWith('_Class'))
 			throw new Error(`Invalid module class name ${name}, must end with "_Class"`);
 		this.setTag(name.replace('_Class', ''));
+	}
+
+	public setConfig = (config: Partial<Config>) => {
+		this.config = {...this.config, ...config};
+		if (config.minLogLevel)
+			this.setMinLevel(config.minLogLevel);
+	};
+
+	protected init(): void {
 	}
 
 	// ################## Class Methods - Logging ##################

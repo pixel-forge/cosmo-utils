@@ -3,7 +3,8 @@ export * from './logging/Cosmo_Logger';
 export * from './logging/Cosmo_ClientLogger';
 
 //Modules
-export * from './modules/CosmoModule';
+export * from './modules/base/Cosmo_Module';
+export * from './modules/base/Cosmo_ModuleManager';
 export * from './modules/CosmoModule_WebStorage';
 
 //Utils
